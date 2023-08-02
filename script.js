@@ -220,12 +220,15 @@ function game() {
             allRounds()
 
             if (computerScore > playerScore) {
+                console.log("SCORPIONS WINS!")
                 img.src = './assets/fatality-mortal-kombat.gif'
                 lostGameDialog()
             } else if (playerScore > computerScore) {
+                console.log("HICHHIKER WINS!")
                 img.src = './assets/finish-him-fatality.gif'
                 wonGameDialog()
             } else {
+                console.log("IT'S A DRAW!")
                 img.src = './assets/scorpion-subzero.gif'
                 lostGameDialog()
             }
