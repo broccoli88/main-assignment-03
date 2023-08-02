@@ -189,7 +189,7 @@ function wonGameDialog() {
                             );
                             setTimeout(() => {
                                 console.log(
-                                    "Scorpion: The answer to your question is 42. That is the answer we received form supercomputer named Depp Thought. It took him 7.5 million years to callculate this answer."
+                                    "Scorpion: The answer to your question is 42. That is the answer we received form supercomputer named Deep Thought. It took it 7.5 million years to calculate this answer."
                                 );
                                 setTimeout(() => {
                                     console.log(
