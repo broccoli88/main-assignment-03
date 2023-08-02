@@ -19,7 +19,7 @@ const initialPromptMessageToPlayer =
 
 
 function computerPlay() {
-    const randomNumber = Math.floor(Math.random() * 3);
+    const randomNumber = Math.floor(Math.random() * moves.length);
     const computerMove = moves[randomNumber];
 
     return computerMove;
@@ -139,21 +139,19 @@ function lostGameDialog() {
         );
         setTimeout(() => {
             console.log("Scorpion: Oh... and Hichhiker...");
+
             setTimeout(() => {
-                console.log("Scorpion: Oh... and Hichhiker...");
+                console.log(
+                    "Hichhiker: What do you want ?"
+                );
                 setTimeout(() => {
                     console.log(
-                        "Hichhiker: What do you want ?"
+                        "Scorpion: Don't forget to close the doors after yourself... I would walk you to the door but I won\'t hehe XD"
                     );
                     setTimeout(() => {
                         console.log(
-                            "Scorpion: Don't forget to close the doors after yourself... I would walk you to the door but I won\t hehe XD"
+                            "Hichhiker: -_-; Go to hell !"
                         );
-                        setTimeout(() => {
-                            console.log(
-                                "Hichhiker: -_-; Go to hell !"
-                            );
-                        }, 1000)
                     }, 1000)
                 }, 1000)
             }, 1000)
