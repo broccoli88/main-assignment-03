@@ -235,4 +235,4 @@ function game() {
     }, 500)
 }
 
-game()
+// window.addEventListener('load', game)
