@@ -205,7 +205,6 @@ function wonGameDialog() {
     }, 1000);
 }
 
-
 function game() {
     playerScore = 0
     computerScore = 0
@@ -235,3 +234,5 @@ function game() {
         }, 7000)
     }, 500)
 }
+
+game()
