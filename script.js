@@ -215,4 +215,11 @@ function game() {
     }
   }, 7000);
 }
+
+function startGame(){
+    console.clear();
+    entryDialog();
+    const startButton = document.getElementById("startButton");
+    startButton.innerHTML = "Play again";
+}
 // window.addEventListener('load', game)
