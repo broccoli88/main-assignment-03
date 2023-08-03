@@ -23,6 +23,26 @@ function computerPlay() {
 
 function playerPlay() {
   let playerMove = window.prompt(initialPromptMessageToPlayer);
+
+  if (playerMove === null) {
+    const result = window.confirm(
+      "You clicked cancel.If you want cancel the game click Cancel, if you want to continue click OK "
+    );
+
+    if (!result) {
+      return null;
+    } else {
+      // Continue the game
+      return playerPlay();
+    }
+  }
+  const isValidChoice = ["rock", "paper", "scissors"].includes(
+    playerMove.toLowerCase()
+  );
+  if (playerMove !== null && !isValidChoice) {
+    alert("Invalid input. Please choose 'Rock', 'Paper', or 'Scissors'.");
+  }
+
   return playerMove.toLowerCase();
 }
 
@@ -58,8 +78,9 @@ function allRounds() {
   for (let i = 1; i < 6; i++) {
     computerSelection = computerPlay();
     playerSelection = playerPlay();
-
-    if (
+    if (!playerSelection) {
+      break;
+    } else if (
       playerSelection === "rock" ||
       playerSelection === "paper" ||
       playerSelection === "scissors"
@@ -86,7 +107,6 @@ function allRounds() {
       }
     } else {
       i--;
-      alert("Invalid input. Please choose 'Rock', 'Paper', or 'Scissors'.");
     }
   }
 }
@@ -184,6 +204,12 @@ function wonGameDialog() {
   }, 1000);
 }
 
+function cancelDialog() {
+  console.log(
+    "You cancelled the game. If you want play game, please click button"
+  );
+}
+
 function game() {
   playerScore = 0;
   computerScore = 0;
@@ -193,8 +219,9 @@ function game() {
 
   setTimeout(() => {
     allRounds();
-
-    if (computerScore > playerScore) {
+    if (!playerSelection) {
+      cancelDialog();
+    } else if (computerScore > playerScore) {
       console.log("SCORPIONS WINS!");
       img.src = "./assets/fatality-mortal-kombat.gif";
       lostGameDialog();
@@ -210,10 +237,11 @@ function game() {
   }, 7000);
 }
 
-function startGame(){
-    console.clear();
-    entryDialog();
-    const startButton = document.getElementById("startButton");
-    startButton.innerHTML = "Play again";
+function startGame() {
+  console.clear();
+  entryDialog();
+  const startButton = document.getElementById("startButton");
+  startButton.innerHTML = "Play again";
 }
+
 // window.addEventListener('load', game)
