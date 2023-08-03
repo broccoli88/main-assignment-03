@@ -23,12 +23,6 @@ function computerPlay() {
 
 function playerPlay() {
   let playerMove = window.prompt(initialPromptMessageToPlayer);
-
-  if (!playerMove) {
-    console.log("Playing or not ?");
-    return;
-  }
-
   return playerMove.toLowerCase();
 }
 
@@ -92,7 +86,7 @@ function allRounds() {
       }
     } else {
       i--;
-      console.log("Mistake round");
+      alert("Invalid input. Please choose 'Rock', 'Paper', or 'Scissors'.");
     }
   }
 }
