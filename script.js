@@ -281,11 +281,20 @@ function startGame() {
         } else if (computerScore > playerScore) {
             gameOutcome = 'SCORPIONS WINS!'
             img.src = "./assets/fatality-mortal-kombat.gif";
+            // adding gameOver after 4s 
+            setTimeout(() => {
+                img.src = "./assets/game-over.gif"
+            }, 2000);
+
             console.log(gameOutcome);
             lostGameDialog();
         } else if (playerScore > computerScore) {
             gameOutcome = 'HICHHIKER WINS!!'
             img.src = "./assets/finish-him-fatality.gif";
+            
+            setTimeout(() => {
+                img.src = "./assets/game-over.gif"
+            }, 4000);
             console.log(gameOutcome);
             wonGameDialog();
         } else {
