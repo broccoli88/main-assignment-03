@@ -279,7 +279,7 @@ function startGame() {
 
             cancelDialog();
         } else if (computerScore > playerScore) {
-            gameOutcome = 'SCORPIONS WINS!'
+            gameOutcome = 'SCORPION WINS!'
             img.src = "./assets/fatality-mortal-kombat.gif";
             console.log(gameOutcome);
             lostGameDialog();
