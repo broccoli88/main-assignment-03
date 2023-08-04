@@ -307,7 +307,7 @@ function game() {
 
     console.clear();
     entryDialog();
-    startGame()
+    startGame();
     startButton.textContent = "Play again";
 }
 
