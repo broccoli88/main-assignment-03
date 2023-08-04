@@ -263,7 +263,7 @@ function showLastThreeGamesResults() {
 
 function commandList() {
     console.log(commandListOptions)
-
+return ">:D";
 }
 
 function startGame() {
@@ -279,7 +279,7 @@ function startGame() {
 
             cancelDialog();
         } else if (computerScore > playerScore) {
-            gameOutcome = 'SCORPIONS WINS!'
+            gameOutcome = 'SCORPION WINS!'
             img.src = "./assets/fatality-mortal-kombat.gif";
             // adding gameOver after 4s 
             setTimeout(() => {
@@ -316,7 +316,7 @@ function game() {
 
     console.clear();
     entryDialog();
-    startGame()
+    startGame();
     startButton.textContent = "Play again";
 }
 
