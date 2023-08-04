@@ -39,13 +39,13 @@ const initialPromptMessageToPlayer =
                     ...::: [ COMMAND LIST ] :::... 
     
     
-    [ START GAME ] >> click "Let\'s begin button OR type game() in the console
+[ START GAME ] >> click "Let\'s begin button OR type game() in the console
     
-    [ CHECK LAST 3 GAMES RESULT ] >> type showLastThreeGamesResults() in  the console
+[ CHECK LAST 3 GAMES RESULT ] >> type showLastThreeGamesResults() in  the console
     
-    [ COMMAND LIST ] >> type commandList() in the console
+[ COMMAND LIST ] >> type commandList() in the console
     
-    [ EXIT GAME ] >> close tab or browser :)
+[ EXIT GAME ] >> close tab or browser :)
     
     
     `
