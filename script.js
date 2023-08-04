@@ -194,7 +194,7 @@ function lostGameDialog() {
                     );
                     setTimeout(() => {
                         console.log("Hichhiker: -_-; Go to hell !");
-                        setTimeout(commandList(), 500)
+                        setTimeout(commandList, 500)
                     }, 1000);
                 }, 1000);
             }, 1000);
