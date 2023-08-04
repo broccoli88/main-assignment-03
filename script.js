@@ -300,6 +300,10 @@ function startGame() {
         } else {
             gameOutcome = "IT'S A DRAW!"
             img.src = "./assets/scorpion-subzero.gif";
+
+            setTimeout(() => {
+                img.src = "./assets/game-over.gif"
+            }, 2000);
             console.log(gameOutcome);
             lostGameDialog();
         }
