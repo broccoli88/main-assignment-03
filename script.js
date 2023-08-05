@@ -313,8 +313,6 @@ function showLastThreeGamesResults() {
 
 function commandList() {
 
-
-
     console.log(commandListOptions);
     return ' ">:D" ';
 
