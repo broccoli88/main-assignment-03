@@ -4,6 +4,14 @@
 const img = document.querySelector("img");
 const startButton = document.getElementById("startButton");
 
+//MUSIC
+const main_audio = new Audio('./music/DBsuper.mp3');
+const gameover_audio = new Audio('./music/re4.mp3');
+const victory_audio = new Audio('./music/Re2.mp3');
+const giveup_audio = new Audio('./music/sasuke.mp3');
+const pl_vict = new Audio('./music/five9.mp3');
+const pc_vict = new Audio('./music/squirrel.mp3');
+
 // VARS
 
 const moves = ["rock", "paper", "scissors"],
@@ -86,30 +94,63 @@ function playerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
+    pc_vict.currentTime = 0; //Restarts audio
+    pl_vict.currentTime = 0; //Restarts audio
+
     if (playerSelection === rock && computerSelection === rock) {
         roundOutcome = "Its a draw!";
+
     } else if (playerSelection === rock && computerSelection === paper) {
+
         roundOutcome = "Scorpion wins this round!";
+
+        pc_vict.play();
+
         computerScore++;
     } else if (playerSelection === rock && computerSelection === scissors) {
+
         roundOutcome = "Hichhiker wins this round!";
+
+        pl_vict.play();
+
         playerScore++;
     } else if (playerSelection === paper && computerSelection === rock) {
+
+
         roundOutcome = "Round goes to Hichhiker!";
+
+        pl_vict.play();
+
         playerScore++;
     } else if (playerSelection === paper && computerSelection === paper) {
+
         roundOutcome = "Its a draw!";
+
     } else if (playerSelection === paper && computerSelection === scissors) {
+
         roundOutcome = "Round goes to Scorpion!";
+
+        pc_vict.play();
+
         computerScore++;
     } else if (playerSelection === scissors && computerSelection === rock) {
+
         roundOutcome = "Scorpion wins!";
+
+        pc_vict.play();
+
         computerScore++;
     } else if (playerSelection === scissors && computerSelection === paper) {
+
         roundOutcome = "Hichhiker wins!";
+
+        pl_vict.play();
+
         playerScore++;
     } else {
+
         roundOutcome = "Its a draw!";
+
     }
 }
 
@@ -179,6 +220,8 @@ function entryDialog() {
 }
 
 function lostGameDialog() {
+    gameover_audio.currentTime = 0;
+    gameover_audio.play();
     setTimeout(() => {
         console.log(
             "Scorpion: You have lost Hichhiker, Now scram, Castlevania: Nocturne is about to begin... "
@@ -203,6 +246,8 @@ function lostGameDialog() {
 }
 
 function wonGameDialog() {
+    victory_audio.currentTime = 0;
+    victory_audio.play();
     console.log("Hichhiker: You lost Scorpion! Now answer my question !");
     setTimeout(() => {
         console.log(
@@ -241,6 +286,11 @@ function wonGameDialog() {
 }
 
 function cancelDialog() {
+
+    main_audio.pause();
+    giveup_audio.currentTime = 0;
+    giveup_audio.play();
+
     console.log(
         "Ha! I knew you would give up. Yoa are as week as Netflixes 'Witcher' series... "
     );
@@ -262,8 +312,12 @@ function showLastThreeGamesResults() {
 }
 
 function commandList() {
-    console.log(commandListOptions)
-return ":D";
+
+
+
+    console.log(commandListOptions);
+    return ' ">:D" ';
+
 }
 
 function startGame() {
@@ -284,23 +338,31 @@ function startGame() {
             // adding gameOver after 4s 
             setTimeout(() => {
                 img.src = "./assets/game-over.gif"
-            }, 2000);
+            }, 4000);
 
             console.log(gameOutcome);
+            main_audio.pause();
             lostGameDialog();
         } else if (playerScore > computerScore) {
             gameOutcome = 'HICHHIKER WINS!!'
             img.src = "./assets/finish-him-fatality.gif";
-            
+
             setTimeout(() => {
                 img.src = "./assets/game-over.gif"
             }, 4000);
             console.log(gameOutcome);
+            main_audio.pause();
             wonGameDialog();
         } else {
             gameOutcome = "IT'S A DRAW!"
             img.src = "./assets/scorpion-subzero.gif";
+
+            setTimeout(() => {
+                img.src = "./assets/game-over.gif"
+            }, 4000);
+
             console.log(gameOutcome);
+            main_audio.pause();
             lostGameDialog();
         }
 
@@ -315,6 +377,12 @@ function game() {
     gameCount++
 
     console.clear();
+
+    victory_audio.pause();
+    main_audio.currentTime = 0;
+    main_audio.volume = 0.15;
+    main_audio.play();
+
     entryDialog();
     startGame();
     startButton.textContent = "Play again";
