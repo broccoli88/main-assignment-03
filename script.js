@@ -383,7 +383,7 @@ function game() {
 
     entryDialog();
     startGame();
-    startButton.textContent = "Play again";
+
 }
 
 
