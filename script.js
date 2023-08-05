@@ -287,9 +287,9 @@ function wonGameDialog() {
 
 function cancelDialog() {
 
-    main_audio.pause();
-    giveup_audio.currentTime = 0;
-    giveup_audio.play();
+    //main_audio.pause();
+    //giveup_audio.currentTime = 0;
+    //giveup_audio.play();
 
     console.log(
         "Ha! I knew you would give up. Yoa are as week as Netflixes 'Witcher' series... "
@@ -375,11 +375,12 @@ function game() {
 
     console.clear();
 
+    /*
     victory_audio.pause();
     main_audio.currentTime = 0;
     main_audio.volume = 0.15;
     main_audio.play();
-
+*/
     entryDialog();
     startGame();
 
