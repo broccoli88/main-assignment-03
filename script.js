@@ -1,7 +1,7 @@
 
 // REFS
 
-const img = document.querySelector("img");
+
 
 
 //MUSIC
@@ -321,9 +321,9 @@ function commandList() {
 function startGame() {
     playerScore = 0;
     computerScore = 0;
-    img.src = "";
+  
 
-    img.src = "assets/mortal-kombat.gif";
+   
 
     setTimeout(() => {
         allRounds();
@@ -332,10 +332,10 @@ function startGame() {
             cancelDialog();
         } else if (computerScore > playerScore) {
             gameOutcome = 'SCORPION WINS!'
-            img.src = "./assets/fatality-mortal-kombat.gif";
+          
             // adding gameOver after 4s 
             setTimeout(() => {
-                img.src = "./assets/game-over.gif"
+               
             }, 4000);
 
             console.log(gameOutcome);
@@ -343,20 +343,19 @@ function startGame() {
             lostGameDialog();
         } else if (playerScore > computerScore) {
             gameOutcome = 'HICHHIKER WINS!!'
-            img.src = "./assets/finish-him-fatality.gif";
-
+           
             setTimeout(() => {
-                img.src = "./assets/game-over.gif"
+               
             }, 4000);
             console.log(gameOutcome);
             main_audio.pause();
             wonGameDialog();
         } else {
             gameOutcome = "IT'S A DRAW!"
-            img.src = "./assets/scorpion-subzero.gif";
+           
 
             setTimeout(() => {
-                img.src = "./assets/game-over.gif"
+                
             }, 4000);
 
             console.log(gameOutcome);
