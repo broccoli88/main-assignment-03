@@ -334,7 +334,7 @@ function startGame() {
             // adding gameOver after 4s 
             setTimeout(() => {
                 img.src = "./assets/game-over.gif"
-            }, 2000);
+            }, 4000);
 
             console.log(gameOutcome);
             main_audio.pause();
@@ -355,7 +355,8 @@ function startGame() {
 
             setTimeout(() => {
                 img.src = "./assets/game-over.gif"
-            }, 2000);
+            }, 4000);
+            
             console.log(gameOutcome);
             main_audio.pause();
             lostGameDialog();
