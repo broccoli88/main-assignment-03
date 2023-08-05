@@ -2,7 +2,7 @@
 // REFS
 
 const img = document.querySelector("img");
-const startButton = document.getElementById("startButton");
+
 
 //MUSIC
 const main_audio = new Audio('./music/DBsuper.mp3');
@@ -389,6 +389,6 @@ function game() {
 
 
 
-startButton.addEventListener('click', game)
 
-window.addEventListener('load', commandList)
+
+
