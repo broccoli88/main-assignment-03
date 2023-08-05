@@ -262,7 +262,8 @@ function showLastThreeGamesResults() {
 }
 
 function commandList() {
-    console.log(commandListOptions)
+    console.log(commandListOptions);
+    return ' ">:D" ';
 
 }
 
